@@ -12,17 +12,18 @@ if not resources:
     print(f"No resources found for target '{target}'.")
     sys.exit(1)
 
-# Always include all src/ code
-resources.append("src/**")
-
 # Read the original databricks.yml
 with open("databricks.yml") as f:
     bundle_config = yaml.safe_load(f)
 
-# Add the include section
+# Include only resource files (YAML/JSON)
 bundle_config['include'] = resources
 
-# Write the generated config to a temp file
+# Sync code/notebooks/etc. (add more as needed)
+bundle_config.setdefault('sync', {})
+bundle_config['sync']['include'] = ["src/**"]
+
+# Write the generated config to databricks.yml (overwrite)
 with open("databricks.yml", "w") as f:
     yaml.dump(bundle_config, f, default_flow_style=False)
 
