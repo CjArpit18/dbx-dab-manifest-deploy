@@ -42,4 +42,4 @@ jobs:
 
       - name: Deploy DAB Bundle
         run: |
-          databricks bundle deploy --target ${{ github.event.inputs.target }} --bundle-file .github/workflows/generated_databricks.yml
+          databricks bundle deploy --target ${{ github.event.inputs.target }}
