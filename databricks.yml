@@ -1,0 +1,16 @@
+bundle:
+  name: databricks-dab-demo
+
+targets:
+  dev:
+    workspace:
+      host: ${{ env.DATABRICKS_HOST_DEV }}
+      root_path: /Shared/dab-demo/dev
+  qa:
+    workspace:
+      host: ${{ env.DATABRICKS_HOST_QA }}
+      root_path: /Shared/dab-demo/qa
+  prod:
+    workspace:
+      host: ${{ env.DATABRICKS_HOST_PROD }}
+      root_path: /Shared/dab-demo/prod
