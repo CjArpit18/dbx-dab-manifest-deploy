@@ -35,10 +35,24 @@ jobs:
         run: |
           python .github/workflows/scripts/generate_databricks_yml.py ${{ github.event.inputs.target }}
 
-      - name: Deploy DAB Bundle
+      # - name: Deploy DAB Bundle
+      #   env:
+      #       DATABRICKS_HOST: ${{ secrets['DATABRICKS_HOST_' + github.event.inputs.env | upper] }}
+      #       DATABRICKS_TOKEN: ${{ secrets['DATABRICKS_TOKEN_' + github.event.inputs.env | upper] }}
+      #   run: |
+      #     databricks bundle deploy --target ${{ github.event.inputs.target }}
+      
+      - name: Deploy to dev
+        if: ${{ github.event.inputs.target == 'dev' }}
+        run: databricks bundle deploy --target dev
         env:
-            DATABRICKS_HOST: ${{ secrets['DATABRICKS_HOST_' + github.event.inputs.env | upper] }}
-            DATABRICKS_TOKEN: ${{ secrets['DATABRICKS_TOKEN_' + github.event.inputs.env | upper] }}
-        run: |
-          databricks bundle deploy --target ${{ github.event.inputs.target }}
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST_DEV }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN_DEV }}
+
+      - name: Deploy to qa
+        if: ${{ github.event.inputs.target == 'qa' }}
+        run: databricks bundle deploy --target qa
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST_QA }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN_QA }}
           
