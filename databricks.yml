@@ -3,8 +3,9 @@ bundle:
 
 targets:
   dev: {}
-    # workspace:
-    #   root_path: /Users/arpitchausaiya777@gmail.com
+  qa: {}
+  prod: {}
+
 #   qa:
 #     workspace:
 #       root_path: /Users/CjArpit18/dev
