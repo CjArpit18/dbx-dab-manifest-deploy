@@ -4,10 +4,10 @@ bundle:
 targets:
   dev:
     workspace:
-      root_path: /Shared/dab-demo/dev
+      root_path: /Users/CjArpit18/dev
   qa:
     workspace:
-      root_path: /Shared/dab-demo/qa
+      root_path: /Users/CjArpit18/dev
   prod:
     workspace:
-      root_path: /Shared/dab-demo/prod
+      root_path: /Users/CjArpit18/dev
