@@ -1,10 +1,10 @@
 bundle:
   name: databricks-dab-demo
 
-# targets:
-#   dev:
-#     # workspace:
-#     #   root_path: /Users/CjArpit18/dev
+targets:
+  dev:
+    # workspace:
+    #   root_path: /Users/CjArpit18/dev
 #   qa:
 #     workspace:
 #       root_path: /Users/CjArpit18/dev
