@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
-      DATABRICKS_HOST_DEV: ${{ secrets.DATABRICKS_HOST_DEV }}
-      DATABRICKS_HOST_QA: ${{ secrets.DATABRICKS_HOST_DEV }}
-      DATABRICKS_HOST_PROD: ${{ secrets.DATABRICKS_HOST_DEV }}
+      DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST_DEV }}
+      # DATABRICKS_HOST_QA: ${{ secrets.DATABRICKS_HOST_DEV }}
+      # DATABRICKS_HOST_PROD: ${{ secrets.DATABRICKS_HOST_DEV }}
 
     steps:
       - name: Checkout repository
