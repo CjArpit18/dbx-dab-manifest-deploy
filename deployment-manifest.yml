@@ -3,7 +3,7 @@
 dev:
   - resources/jobs/daily_etl_job.yml
   - resources/jobs/experimental_feature_job.yml
-  - resources/pipelines/main_dlt_pipeline.yml
+  # - resources/pipelines/main_dlt_pipeline.yml
 
 qa:
   - resources/jobs/daily_etl_job.yml
