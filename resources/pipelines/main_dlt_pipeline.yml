@@ -9,4 +9,4 @@ resources:
       development: true
       libraries:
         - notebook:
-            path: ../src/sample_notebook.py
+            path: src/sample_notebook.py
