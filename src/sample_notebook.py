@@ -4,4 +4,4 @@
 # This is a demo Databricks notebook for DAB deployment.
 
 # COMMAND ----------
-print("Hello from Databricks Asset Bundles notebook!")
+print("Hello from Databricks Asset Bundles notebook! V2")
