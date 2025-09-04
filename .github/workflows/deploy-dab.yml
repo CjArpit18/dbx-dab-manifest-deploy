@@ -11,11 +11,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
-      DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST_DEV }}
-      # DATABRICKS_HOST_QA: ${{ secrets.DATABRICKS_HOST_DEV }}
-      # DATABRICKS_HOST_PROD: ${{ secrets.DATABRICKS_HOST_DEV }}
 
     steps:
       - name: Checkout repository
@@ -41,5 +36,9 @@ jobs:
           python .github/workflows/scripts/generate_databricks_yml.py ${{ github.event.inputs.target }}
 
       - name: Deploy DAB Bundle
+        env:
+            DATABRICKS_HOST: ${{ secrets['DATABRICKS_HOST_' + github.event.inputs.env | upper] }}
+            DATABRICKS_TOKEN: ${{ secrets['DATABRICKS_TOKEN_' + github.event.inputs.env | upper] }}
         run: |
           databricks bundle deploy --target ${{ github.event.inputs.target }}
+          
