@@ -5,4 +5,4 @@ perresources:
       tasks:
         - task_key: "run-experiment"
           notebook_task:
-            notebook_path: ../../src/experiment.py
+            notebook_path: ../../src/sample_notebook.py
