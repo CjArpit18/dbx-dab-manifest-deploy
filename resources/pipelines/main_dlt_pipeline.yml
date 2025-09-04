@@ -1,0 +1,9 @@
+name: "Main DLT Pipeline"
+clusters:
+  - label: "default"
+    num_workers: 1
+    spark_version: "13.3.x-scala2.12"
+development: true
+libraries:
+  - notebook:
+      path: ./src/sample_notebook.py
