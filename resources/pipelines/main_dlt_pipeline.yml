@@ -2,9 +2,6 @@ resources:
   pipelines:
     main_dlt_pipeline:
       name: "Main DLT Pipeline"
-      clusters:
-        - label: "default"
-          num_workers: 1
       development: true
       libraries:
         - notebook:
