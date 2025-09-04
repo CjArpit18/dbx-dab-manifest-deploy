@@ -2,7 +2,7 @@ resources:
   pipelines:
     main_dlt_pipeline:
       name: "Main DLT Pipeline"
-      development: true
+      serverless: true
       libraries:
         - notebook:
             path: ../../src/sample_notebook.py
