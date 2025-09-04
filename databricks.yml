@@ -4,13 +4,10 @@ bundle:
 targets:
   dev:
     workspace:
-      # host: ${DATABRICKS_HOST_DEV}
       root_path: /Shared/dab-demo/dev
   qa:
     workspace:
-      # host: ${DATABRICKS_HOST_DEV}
       root_path: /Shared/dab-demo/qa
   prod:
     workspace:
-      # host: ${DATABRICKS_HOST_DEV}
       root_path: /Shared/dab-demo/prod
