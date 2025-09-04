@@ -1,8 +1,8 @@
-resources:
+perresources:
   jobs:
     experimental_feature_job:
       name: "Experimental Feature Job"
       tasks:
         - task_key: "run-experiment"
           notebook_task:
-            notebook_path: ../../src/sample_notebook.py
+            notebook_path: ../../src/experiment.py
