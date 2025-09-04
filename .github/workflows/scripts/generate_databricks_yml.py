@@ -23,7 +23,7 @@ with open("databricks.yml") as f:
 bundle_config['include'] = resources
 
 # Write the generated config to a temp file
-with open(".github/workflows/generated_databricks.yml", "w") as f:
+with open("databricks.yml", "w") as f:
     yaml.dump(bundle_config, f, default_flow_style=False)
 
-print(f"Generated .github/workflows/generated_databricks.yml for target: {target}")
+print(f"Overwrite databricks.yml for target: {target}")
