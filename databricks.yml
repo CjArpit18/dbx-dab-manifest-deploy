@@ -2,9 +2,9 @@ bundle:
   name: databricks-dab-demo
 
 targets:
-  dev:
-    workspace:
-      root_path: /Users/arpitchausaiya777@gmail.com
+  dev:{}
+    # workspace:
+    #   root_path: /Users/arpitchausaiya777@gmail.com
 #   qa:
 #     workspace:
 #       root_path: /Users/CjArpit18/dev
