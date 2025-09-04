@@ -1,9 +1,12 @@
-name: "Experimental Feature Job"
-tasks:
-  - task_key: "run-experiment"
-    notebook_task:
-      notebook_path: ./src/sample_notebook.py
-    new_cluster:
-      spark_version: "13.3.x-scala2.12"
-      num_workers: 1
-      node_type_id: "Standard_DS3_v2"
+resources:
+  jobs:
+    experimental_feature_job:
+      name: "Experimental Feature Job"
+      tasks:
+        - task_key: "run-experiment"
+          notebook_task:
+            notebook_path: ./src/sample_notebook.py
+          new_cluster:
+            spark_version: "13.3.x-scala2.12"
+            num_workers: 1
+            node_type_id: "Standard_DS3_v2"
