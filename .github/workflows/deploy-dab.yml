@@ -34,13 +34,6 @@ jobs:
       - name: Generate dynamic databricks.yml with includes
         run: |
           python .github/workflows/scripts/generate_databricks_yml.py ${{ github.event.inputs.target }}
-
-      # - name: Deploy DAB Bundle
-      #   env:
-      #       DATABRICKS_HOST: ${{ secrets['DATABRICKS_HOST_' + github.event.inputs.env | upper] }}
-      #       DATABRICKS_TOKEN: ${{ secrets['DATABRICKS_TOKEN_' + github.event.inputs.env | upper] }}
-      #   run: |
-      #     databricks bundle deploy --target ${{ github.event.inputs.target }}
       
       - name: Deploy to dev
         if: ${{ github.event.inputs.target == 'dev' }}
