@@ -1,5 +1,5 @@
 bundle:
-  name: databricks-dab-demo
+  name: dbx-manifest-demo
 
 targets:
   dev: {}
