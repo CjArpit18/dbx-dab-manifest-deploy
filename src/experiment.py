@@ -5,3 +5,4 @@
 
 # COMMAND ----------
 print("Ready to move to QA")
+print("Let's deploy to QA")
