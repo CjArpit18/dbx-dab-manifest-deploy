@@ -4,4 +4,4 @@
 # This is a demo Databricks notebook for DAB deployment.
 
 # COMMAND ----------
-print("Process is under development")
+print("Ready to move to QA")
