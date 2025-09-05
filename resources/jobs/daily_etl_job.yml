@@ -5,5 +5,5 @@ resources:
       tasks:
         - task_key: "run-daily-notebook"
           notebook_task:
-            notebook_path: ../../src/sample_notebook.py
+            notebook_path: ../../src/daily_etl.py
 
