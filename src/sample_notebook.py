@@ -4,5 +4,4 @@
 # This is a demo Databricks notebook for DAB deployment.
 
 # COMMAND ----------
-print("Hello to Databricks from DABs !!")
-print("Changes are for dev only, performance review left for QA")
+print("Hello Everyone !! Job is Ready for DEV & QA")
