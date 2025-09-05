@@ -4,5 +4,4 @@
 # This is a demo Databricks notebook for DAB deployment.
 
 # COMMAND ----------
-print("Ready to move to QA")
-print("Let's deploy to QA")
+print("This job is under development")
