@@ -39,13 +39,13 @@ jobs:
         if: ${{ github.event.inputs.target == 'dev' }}
         run: databricks bundle deploy --target dev
         env:
-          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST_DEV }}
-          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+          DATABRICKS_HOST: ${{ secrets.DBX_DEV_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DBX_DEV_TOKEN }}
 
       - name: Deploy to qa
         if: ${{ github.event.inputs.target == 'qa' }}
         run: databricks bundle deploy --target qa
         env:
-          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST_QA }}
-          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN_QA }}
+          DATABRICKS_HOST: ${{ secrets.DBX_QA_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DBX_QA_TOKEN }}
           
