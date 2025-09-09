@@ -9,7 +9,7 @@ on:
         default: "dev"
 
 env:
-  ADMIN_USERS: "CjArpit18"  # Add your admin usernames here
+  ADMIN_USERS: "CjArpit17"  # Add your admin usernames here
 
 jobs:
   deploy:
