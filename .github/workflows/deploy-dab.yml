@@ -9,12 +9,11 @@ on:
         default: "dev"
 
 env:
-  ADMIN_USERS: "CjArpit17"  
+  ADMIN_USERS: "CjArpit17,TempUser19"  
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.target == 'prod' && 'prod' || '' }}
 
     steps:
       - name: Checkout repository
