@@ -9,7 +9,7 @@ on:
         default: "dev"
 
 env:
-  ADMIN_USERS: "CjArpit17,TempUser19"  
+  ADMIN_USERS: "CjArpit18,TempUser19"  
 
 jobs:
   deploy:
