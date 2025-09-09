@@ -8,12 +8,10 @@ on:
         required: true
         default: "dev"
 
-env:
-  ADMIN_USERS: "CjArpit18"  # Add your admin usernames here
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.target == 'prod' && 'prod' || '' }}
 
     steps:
       - name: Checkout repository
@@ -37,25 +35,6 @@ jobs:
       - name: Generate dynamic databricks.yml with includes
         run: |
           python .github/workflows/scripts/generate_databricks_yml.py ${{ github.event.inputs.target }}
-
-      # --- Admin check before prod deploy ---
-      - name: Check Admin Permission for Prod
-        if: ${{ github.event.inputs.target == 'prod' }}
-        run: |
-          IFS=',' read -ra ADMINS <<< "${{ env.ADMIN_USERS }}"
-          IS_ADMIN=false
-          for admin in "${ADMINS[@]}"; do
-            if [[ "$admin" == "${{ github.actor }}" ]]; then
-              IS_ADMIN=true
-              break
-            fi
-          done
-          if [[ "$IS_ADMIN" != "true" ]]; then
-            echo "ERROR: Admin level permissions required to deploy to prod. '${{ github.actor }}' is not authorized."
-            exit 1
-          else
-            echo "User '${{ github.actor }}' is authorized for prod deployment."
-          fi
 
       - name: Deploy to dev
         if: ${{ github.event.inputs.target == 'dev' }}
